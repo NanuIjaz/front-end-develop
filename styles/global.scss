@@ -1,0 +1,257 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+
+    --card: 194.44, 100%, 10.59%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+
+    --primary: 194 100% 11%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 10% 3.9%;
+
+    --radius: 1rem;
+
+    --yellow: 43.08 100% 69.41%;
+    --red: 342.68 100% 53.14%;
+
+    --navy-50: 180 17% 98%;
+    --navy-100: 196 12% 82%;
+    --navy-200: 196.36, 12.09%, 82.16%;
+    --navy-300: 196.36, 12.09%, 64.31%;
+    --navy-400: 195 14% 46%;
+    --navy-500: 194 30% 28%;
+    --navy-600: 194.72, 84.13%, 12.35%;
+    --navy-700: 194.44, 100%, 10.59%;
+
+    --orange: 14 100% 65%;
+
+    --broken-white: 196.36, 12.09%, 82.16%;
+  }
+
+  .dark {
+    --background: 194 100% 11%;
+    --foreground: 0 0% 98%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 194 100% 11%;
+
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+  }
+
+  @font-face {
+    font-family: "aeonik";
+    src: url("/fonts/Aeonik-Bold.woff2") format("woff2");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: "aeonik";
+    src: url("/fonts/Aeonik-Medium.woff2") format("woff2");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: "aeonik";
+    src: url("/fonts/Aeonik-Regular.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  * {
+    @apply border-border font-aeonik;
+  }
+
+  body {
+    @apply bg-white dark:bg-navy-700 text-foreground;
+  }
+
+  .container {
+    @apply max-w-[1440px] w-full max-sm:px-5;
+
+    @media (min-width: 1536px) {
+      padding-left: 0px !important;
+      padding-right: 0px !important;
+    }
+  }
+
+  // Font
+  h1, h2, h3, h4, h5, h6, p, .body-m, span, div, strong, button, .label-s, .link {
+    @apply font-aeonik dark:text-white text-navy-700;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold;
+  }
+
+  h1 {
+    @apply text-2xl xl:text-[50px] leading-[25.2px] xl:leading-[52.5px];
+  }
+
+  h2 {
+    @apply text-[32px] leading-10;
+  }
+
+  h3 {
+    @apply text-2xl leading-8;
+  }
+
+  h4 {
+    @apply text-xl;
+  }
+
+  p {
+    @apply text-xs xl:text-base;
+  }
+
+  .body {
+    &-m {
+      @apply text-base font-normal font-aeonik text-navy-200;
+    }
+
+    &-l {
+      @apply text-base font-normal font-aeonik text-navy-100;
+    }
+  }
+
+  .label-s {
+    @apply text-[15px] font-aeonik font-medium leading-[15.75px];
+  }
+
+  .link {
+    @apply font-medium text-[15px] leading-4;
+  }
+
+  .tagline {
+    @apply font-medium uppercase;
+  }
+
+  .linear {
+    &-fee {
+      background: linear-gradient(129.63deg, #33545E 12.32%, rgba(255, 119, 77, 0.47) 87.58%);
+    }
+
+    &-our-direction {
+      background: linear-gradient(150.43deg, rgba(255, 255, 255, 0.8) 62.5%, rgba(255, 119, 77, 0.8) 121.61%);
+    }
+
+    &-orange {
+      background: linear-gradient(180deg, rgba(51, 84, 94, 0.1) 67.16%, #D26E51 100%);
+    }
+
+    &-requirement {
+      background: linear-gradient(150.43deg, #FFFFFF 62.5%, #FF774D 121.61%);
+    }
+
+    &-syllabus {
+      background: linear-gradient(150.43deg, #FFFFFF 62.5%, #FF774D 121.61%);
+    }
+  }
+
+  .shadow {
+    &-soft {
+      box-shadow: 0px 91px 16.5px 0px hsla(0, 0%, 0%, 0.04);
+    }
+
+    &-47 {
+      box-shadow: 47px 57px 30.8px 0px hsla(0, 0%, 0%, 0.1);
+    }
+
+    &-32 {
+      box-shadow: 0px 18px 32px 0px hsla(0, 0%, 0%, 0.04);
+    }
+
+    &-91 {
+      box-shadow: 91px 61px 30.8px 0px hsla(0, 0%, 0%, 0.04);
+    }
+  }
+
+  .filter {
+    &-white {
+      filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7473%) hue-rotate(293deg) brightness(105%) contrast(104%);
+    }
+
+    &-navy {
+      &-400 {
+        filter: brightness(0) saturate(100%) invert(55%) sepia(3%) saturate(2781%) hue-rotate(149deg) brightness(84%) contrast(75%);
+      }
+
+      &-700 {
+        filter: brightness(0) saturate(100%) invert(13%) sepia(45%) saturate(1714%) hue-rotate(160deg) brightness(89%) contrast(101%);
+      }
+    }
+  }
+}
+
+.hover {
+  &-underline {
+    @apply relative inline-block;
+	
+    &::after {
+		  content: "";
+		  transform: scaleX(0);
+		  transform-origin: bottom right;
+		  transition: transform 0.25s ease-out;
+
+		  @apply absolute bottom-[-3px] left-0 h-px w-full bg-gradient-to-r from-[#FFD363] to-[#FF1055];
+	  }
+  }
+
+  &-underline:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+}
+
+.rich-text {
+  p {
+    @apply text-base xl:text-lg;
+  }
+}
