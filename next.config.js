@@ -15,12 +15,10 @@ module.exports = {
         hostname: '**.antigravity.dev',
       },
       {
-	protocol: 'https',
-	hostname: '**.emurgo.com'
-	},
-
+        protocol: 'http',
+        hostname: '**.emurgornd.com'
+        },
     ],
-    domains: ['localhost'],
   },
   reactStrictMode: false,
 };
